@@ -112,19 +112,3 @@ class CascadeCMSRestDriver:
             'workflowSettings']
         return len(workflow_settings['workflowDefinitions']) > 0 or \
             len(workflow_settings['workflowDefinitions']) > 0
-
-
-if __name__ == "__main__":
-    # Usage
-    # you can provide a username and password or alternatively an api key (better)
-    # verbose boolean indicates whether to use verbose logging
-    driver = CascadeCMSRestDriver(
-        organization_name="my-organization", api_key='my-api-key', verbose=True)
-
-    # driver = CascadeCMSRestDriver(
-    #     organization_name="my-organization", username='my-username', password='my-password', verbose=True)
-
-    sites = driver.list_sites()['sites']
-    for s in sites:
-        asset = driver.read_asset(asset_type='site', asset_identifier=s['id'])
-        driver.debug(asset)
