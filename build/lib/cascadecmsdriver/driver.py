@@ -120,17 +120,20 @@ class CascadeCMSRestDriver:
     def get_group(self, group_name):
         return self.read_asset(asset_type='group', asset_identifier=group_name)
 
-    def publish_asset_by_id(self, asset_identifier='', publish_information=None):
-        url = f'{self.base_url}/api/v1/publish/{asset_identifier}'
+    def publish_asset(self, asset_type='page', asset_identifier='', publish_information=None):
+        url = f'{self.base_url}/api/v1/publish/{asset_type}/{asset_identifier}'
         self.debug(
-            f'Publishing asset {asset_identifier} with {url}')
+            f'Publishing {asset_type} asset {asset_identifier} with {url}')
         if publish_information:
             self.debug(
                 f'Publish information provided in request: {publish_information}')
         return self.session.get(url).json()
 
-    def unpublish_asset_by_id(self, asset_identifier):
-        return self.publish_asset_by_id(
+    def unpublish_asset(self, asset_type='page', asset_identifier=''):
+        self.debug(
+            f'Unpublishing {asset_type} asset {asset_identifier}')
+        return self.publish_asset(
+            asset_type=asset_type,
             asset_identifier=asset_identifier,
             publish_information={
                 'publishInformation': {
@@ -138,6 +141,8 @@ class CascadeCMSRestDriver:
                 }
             })
 
-    def get_access_rights_for_asset(self, asset_identifier):
-        url = f'{self.base_url}/api/v1/readAccessRights/{asset_identifier}'
+    def get_access_rights_for_asset(self, asset_type='page', asset_identifier=''):
+        url = f'{self.base_url}/api/v1/readAccessRights/{asset_type}/{asset_identifier}'
+        self.debug(
+            f'Getting access rights for {asset_type} asset {asset_identifier} with URL {url}')
         return self.session.get(url).json()
