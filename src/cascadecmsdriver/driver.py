@@ -22,6 +22,8 @@ class CascadeCMSRestDriver:
             self.headers = {
                 'Authorization': f'Bearer {authstring}'
             }
+        self.session = requests.Session()
+        self.session.headers = self.headers
         self.setup_logging(verbose=verbose)
 
     def setup_logging(self, verbose=False):
@@ -52,20 +54,20 @@ class CascadeCMSRestDriver:
         """ List all sites """
         url = f'{self.base_url}/api/v1/listSites'
         self.debug(f"Listing all sites with {url}")
-        return requests.get(url, headers=self.headers).json()
+        return self.session.get(url).json()
 
     def read_asset(self, asset_type='page', asset_identifier=None):
         """ read a CMS asset given its id and type"""
         url = f'{self.base_url}/api/v1/read/{asset_type}/{asset_identifier}'
         self.debug(f'Reading {asset_type} {asset_identifier} with {url}')
-        return requests.get(url, headers=self.headers).json()
+        return self.session.get(url).json()
 
     def read_asset_workflow_settings(self, asset_type='page', asset_identifier=None):
         """ read workflow settings on a specific asset """
         url = f'{self.base_url}/api/v1/readWorkflowSettings/{asset_type}/{asset_identifier}'
         self.debug(
             f'Reading {asset_type} {asset_identifier} workflow settings with {url}')
-        return requests.get(url, headers=self.headers).json()
+        return self.session.get(url).json()
 
     def edit_asset_workflow_settings(self, asset_type='page', asset_identifier=None, payload=None):
         """ edit workflow settings on a given asset of a given type.
@@ -88,8 +90,7 @@ class CascadeCMSRestDriver:
                     self.debug(
                         'Payload is a dictionary; converting to JSON string with json.dumps()')
                     payload = json.dumps(payload)
-                response = requests.post(
-                    url=url, headers=self.headers, data=payload).json()
+                response = self.session.post(url, data=payload).json()
 
             else:
                 self.error(
@@ -112,3 +113,36 @@ class CascadeCMSRestDriver:
             'workflowSettings']
         return len(workflow_settings['workflowDefinitions']) > 0 or \
             len(workflow_settings['workflowDefinitions']) > 0
+
+    def get_user_by_email(self, email_address=""):
+        return self.read_asset(asset_type='user', asset_identifier=email_address)
+
+    def get_group(self, group_name):
+        return self.read_asset(asset_type='group', asset_identifier=group_name)
+
+    def publish_asset(self, asset_type='page', asset_identifier='', publish_information=None):
+        url = f'{self.base_url}/api/v1/publish/{asset_type}/{asset_identifier}'
+        self.debug(
+            f'Publishing {asset_type} asset {asset_identifier} with {url}')
+        if publish_information:
+            self.debug(
+                f'Publish information provided in request: {publish_information}')
+        return self.session.get(url).json()
+
+    def unpublish_asset(self, asset_type='page', asset_identifier=''):
+        self.debug(
+            f'Unpublishing {asset_type} asset {asset_identifier}')
+        return self.publish_asset(
+            asset_type=asset_type,
+            asset_identifier=asset_identifier,
+            publish_information={
+                'publishInformation': {
+                    'unpublish': True
+                }
+            })
+
+    def get_access_rights_for_asset(self, asset_type='page', asset_identifier=''):
+        url = f'{self.base_url}/api/v1/readAccessRights/{asset_type}/{asset_identifier}'
+        self.debug(
+            f'Getting access rights for {asset_type} asset {asset_identifier} with URL {url}')
+        return self.session.get(url).json()
