@@ -127,7 +127,8 @@ class CascadeCMSRestDriver:
         if publish_information:
             self.debug(
                 f'Publish information provided in request: {publish_information}')
-        return self.session.get(url, data=publish_information).json()
+            publish_information = json.dumps(publish_information)
+        return self.session.post(url, data=publish_information).json()
 
     def unpublish_asset(self, asset_type='page', asset_identifier=''):
         self.debug(
