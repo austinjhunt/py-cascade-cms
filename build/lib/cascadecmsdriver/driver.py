@@ -153,8 +153,10 @@ class CascadeCMSRestDriver:
         return self.session.post(
             url,
             data=json.dumps({
-                'newName': new_name,
-                'doWorkflow': False,
-                'destinationContainerIdentifier': destination_container_identifier
+                'copyParameters': {
+                    'newName': new_name,
+                    'doWorkflow': False,
+                    'destinationContainerIdentifier': destination_container_identifier
+                }
             })
         ).json()
