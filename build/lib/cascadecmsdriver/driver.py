@@ -147,3 +147,14 @@ class CascadeCMSRestDriver:
         self.debug(
             f'Getting access rights for {asset_type} asset {asset_identifier} with URL {url}')
         return self.session.get(url).json()
+
+    def copy_asset_to_new_container(self, asset_identifier: str = '', new_name: str = '', destination_container_identifier: str = ''):
+        url = f'{self.base_url}/api/v1/copy/{asset_identifier}'
+        return self.session.post(
+            url,
+            data=json.dumps({
+                'newName': new_name,
+                'doWorkflow': False,
+                'destinationContainerIdentifier': destination_container_identifier
+            })
+        ).json()
