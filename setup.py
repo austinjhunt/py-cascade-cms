@@ -11,7 +11,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="py-cascade-cms-api",
-    version="1.0.8",
+    version="1.0.9",
     description="Simplify interaction with Hannon Hill's Cascade CMS 8 REST API",
     long_description=README,
     keywords='cascade, cms, rest, api, hannon hill, driver',

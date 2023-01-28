@@ -1,0 +1,247 @@
+ns0:accessRightsInformation(identifier: ns0:identifier, aclEntries: ns0:acl-entries, allLevel: ns0:all-level)
+ns0:acl-entries(aclEntry: ns0:aclEntry[])
+ns0:acl-entry-level
+ns0:acl-entry-type
+ns0:aclEntry(level: ns0:acl-entry-level, type: ns0:acl-entry-type, name: xsd:string)
+ns0:all-level
+ns0:asset(workflowConfiguration: ns0:workflow-configuration, ({feedBlock: ns0:feedBlock} | {indexBlock: ns0:indexBlock} | {textBlock: ns0:textBlock} | {xhtmlDataDefinitionBlock: ns0:xhtmlDataDefinitionBlock} | {xmlBlock: ns0:xmlBlock} | {file: ns0:file} | {folder: ns0:folder} | {page: ns0:page} | {reference: ns0:reference} | {xsltFormat: ns0:xsltFormat} | {scriptFormat: ns0:scriptFormat} | {symlink: ns0:symlink} | {template: ns0:template} | {user: ns0:user} | {group: ns0:group} | {role: ns0:role} | {assetFactory: ns0:assetFactory} | {assetFactoryContainer: ns0:assetFactoryContainer} | {contentType: ns0:contentType} | {contentTypeContainer: ns0:contentTypeContainer} | {connectorContainer: ns0:connectorContainer} | {facebookConnector: ns0:facebookConnector} | {wordPressConnector: ns0:wordPressConnector} | {googleAnalyticsConnector: ns0:googleAnalyticsConnector} | {pageConfigurationSet: ns0:pageConfigurationSet} | {pageConfigurationSetContainer: ns0:pageConfigurationSetContainer} | {dataDefinition: ns0:dataDefinition} | {dataDefinitionContainer: ns0:dataDefinitionContainer} | {sharedField: ns0:sharedField} | {sharedFieldContainer: ns0:sharedFieldContainer} | {metadataSet: ns0:metadataSet} | {metadataSetContainer: ns0:metadataSetContainer} | {publishSet: ns0:publishSet} | {publishSetContainer: ns0:publishSetContainer} | {target: ns0:target} | {siteDestinationContainer: ns0:siteDestinationContainer} | {destination: ns0:destination} | {fileSystemTransport: ns0:fileSystemTransport} | {ftpTransport: ns0:ftpTransport} | {databaseTransport: ns0:databaseTransport} | {cloudTransport: ns0:cloudTransport} | {transportContainer: ns0:transportContainer} | {workflowDefinition: ns0:workflowDefinition} | {workflowDefinitionContainer: ns0:workflowDefinitionContainer} | {workflowEmail: ns0:workflowEmail} | {workflowEmailContainer: ns0:workflowEmailContainer} | {twitterFeedBlock: ns0:twitterFeedBlock} | {site: ns0:site} | {editorConfiguration: ns0:editorConfiguration}))
+ns0:asset-factory-plugin(name: xsd:string, parameters: ns0:asset-factory-plugin-parameters)
+ns0:asset-factory-plugin-parameter(name: xsd:string, value: xsd:string)
+ns0:asset-factory-plugin-parameters(parameter: ns0:asset-factory-plugin-parameter[])
+ns0:asset-factory-plugins(plugin: ns0:asset-factory-plugin[])
+ns0:asset-factory-workflow-mode
+ns0:assetFactory(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, applicableGroups: xsd:string, assetType: xsd:string, baseAssetId: xsd:string, baseAssetPath: xsd:string, baseAssetRecycled: xsd:boolean, description: xsd:string, placementFolderId: xsd:string, placementFolderPath: xsd:string, placementFolderRecycled: xsd:boolean, allowSubfolderPlacement: xsd:boolean, folderPlacementPosition: xsd:nonNegativeInteger, overwrite: xsd:boolean, workflowMode: ns0:asset-factory-workflow-mode, workflowDefinitionId: xsd:string, workflowDefinitionPath: xsd:string, plugins: ns0:asset-factory-plugins)
+ns0:assetFactoryContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, applicableGroups: xsd:string, description: xsd:string, children: ns0:container-children)
+ns0:assetIdentifiers(assetIdentifier: ns0:identifier[])
+ns0:audit(user: xsd:string, action: ns0:auditTypes, identifier: ns0:identifier, date: xsd:dateTime)
+ns0:auditParameters(identifier: ns0:identifier, username: xsd:string, groupname: xsd:string, rolename: xsd:string, startDate: xsd:dateTime, endDate: xsd:dateTime, auditType: ns0:auditTypes)
+ns0:auditTypes
+ns0:audits(audit: ns0:audit[])
+ns0:authMode
+ns0:authentication(password: xsd:string, username: xsd:string, apiKey: xsd:string)
+ns0:base-asset(id: xsd:string)
+ns0:batchResult(({operationResult: ns0:operationResult} | {checkOutResult: ns0:checkOutResult} | {createResult: ns0:createResult} | {listMessagesResult: ns0:listMessagesResult} | {readResult: ns0:readResult} | {readAccessRightsResult: ns0:readAccessRightsResult} | {readWorkflowSettingsResult: ns0:readWorkflowSettingsResult} | {readAuditsResult: ns0:readAuditsResult} | {listSubscribersResult: ns0:listSubscribersResult} | {searchResult: ns0:searchResult} | {readWorkflowInformationResult: ns0:readWorkflowInformationResult}))
+ns0:block(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean)
+ns0:checkIn(identifier: ns0:identifier)
+ns0:checkOut(identifier: ns0:identifier)
+ns0:checkOutResult(success: xsd:string, message: xsd:string, workingCopyIdentifier: ns0:identifier)
+ns0:cloudTransport(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, key: xsd:string, secret: xsd:string, bucketName: xsd:string, basePath: xsd:string)
+ns0:connector(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, auth1: xsd:string, auth2: xsd:string, url: xsd:string, verified: xsd:boolean, verifiedDate: xsd:dateTime, connectorParameters: ns0:connector-parameter-list, connectorContentTypeLinks: ns0:connector-content-type-link-list)
+ns0:connector-content-type-link(contentTypeId: xsd:string, contentTypePath: xsd:string, pageConfigurationId: xsd:string, pageConfigurationName: xsd:string, connectorContentTypeLinkParams: ns0:connector-content-type-link-param-list)
+ns0:connector-content-type-link-list(connectorContentTypeLink: ns0:connector-content-type-link[])
+ns0:connector-content-type-link-param(name: xsd:string, value: xsd:string)
+ns0:connector-content-type-link-param-list(connectorContentTypeLinkParam: ns0:connector-content-type-link-param[])
+ns0:connector-parameter(name: xsd:string, value: xsd:string)
+ns0:connector-parameter-list(connectorParameter: ns0:connector-parameter[])
+ns0:connectorContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:container-children(child: ns0:identifier[])
+ns0:containered-asset(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string)
+ns0:contentType(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, pageConfigurationSetId: xsd:string, pageConfigurationSetPath: xsd:string, metadataSetId: xsd:string, metadataSetPath: xsd:string, dataDefinitionId: xsd:string, dataDefinitionPath: xsd:string, editorConfigurationId: xsd:string, editorConfigurationPath: xsd:string, publishSetId: xsd:string, publishSetPath: xsd:string, contentTypePageConfigurations: ns0:contentTypePageConfigurations, inlineEditableFields: ns0:inlineEditableFields)
+ns0:contentTypeContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:contentTypePageConfiguration(pageConfigurationId: xsd:string, pageConfigurationName: xsd:string, publishMode: ns0:contentTypePageConfigurationPublishMode, destinations: ns0:destination-list)
+ns0:contentTypePageConfigurationPublishMode
+ns0:contentTypePageConfigurations(contentTypePageConfiguration: ns0:contentTypePageConfiguration[])
+ns0:copy(identifier: ns0:identifier, copyParameters: ns0:copyParameters, workflowConfiguration: ns0:workflow-configuration)
+ns0:copyParameters(destinationContainerIdentifier: ns0:identifier, doWorkflow: xsd:boolean, newName: xsd:string)
+ns0:create(asset: ns0:asset)
+ns0:createResult(success: xsd:string, message: xsd:string, createdAssetId: xsd:string)
+ns0:dataDefinition(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, xml: xsd:string)
+ns0:dataDefinitionContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:databaseTransport(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, transportSiteId: xsd:nonNegativeInteger, serverName: xsd:string, serverPort: xsd:positiveInteger, databaseName: xsd:string, username: xsd:string, password: xsd:string)
+ns0:dayOfWeek
+ns0:daysOfWeek(dayOfWeek: ns0:dayOfWeek[])
+ns0:delete(workflowConfiguration: ns0:workflow-configuration, identifier: ns0:identifier, deleteParameters: ns0:deleteParameters)
+ns0:deleteParameters(unpublish: xsd:boolean, destinations: ns0:assetIdentifiers, doWorkflow: xsd:boolean)
+ns0:destination(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, transportId: xsd:string, transportPath: xsd:string, applicableGroups: xsd:string, directory: xsd:string, enabled: xsd:boolean, checkedByDefault: xsd:boolean, publishASCII: xsd:boolean, usesScheduledPublishing: xsd:boolean, scheduledPublishDestinationMode: ns0:scheduledDestinationMode, scheduledPublishDestinations: ns0:destination-list, timeToPublish: xsd:time, ({publishIntervalHours: xsd:nonNegativeInteger} | {publishDaysOfWeek: ns0:daysOfWeek} | {cronExpression: xsd:string}), sendReportToUsers: xsd:string, sendReportToGroups: xsd:string, sendReportOnErrorOnly: xsd:boolean, webUrl: xsd:string, extensionsToStrip: xsd:string, siteId: xsd:string, siteName: xsd:string)
+ns0:destination-list(destination: ns0:identifier[])
+ns0:dublin-aware-asset(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger)
+ns0:dynamic-metadata-field-definition-value(value: xsd:string, label: xsd:string, selectedByDefault: xsd:boolean)
+ns0:dynamic-metadata-field-definition-values(possibleValue: ns0:dynamic-metadata-field-definition-value[])
+ns0:dynamic-metadata-field-definitions(dynamicMetadataFieldDefinition: ns0:dynamicMetadataFieldDefinition[])
+ns0:dynamic-metadata-field-type
+ns0:dynamicMetadataField(name: xsd:string, fieldValues: ns0:fieldValues)
+ns0:dynamicMetadataFieldDefinition(name: xsd:string, label: xsd:string, fieldType: ns0:dynamic-metadata-field-type, required: xsd:boolean, visibility: ns0:metadata-field-visibility, possibleValues: ns0:dynamic-metadata-field-definition-values, helpText: xsd:string)
+ns0:dynamicMetadataFields(dynamicField: ns0:dynamicMetadataField[])
+ns0:edit(asset: ns0:asset)
+ns0:editAccessRights(accessRightsInformation: ns0:accessRightsInformation, applyToChildren: xsd:boolean)
+ns0:editPreferenceResult(preference: ns0:preference)
+ns0:editWorkflowSettings(workflowSettings: ns0:workflowSettings, applyInheritWorkflowsToChildren: xsd:boolean, applyRequireWorkflowToChildren: xsd:boolean)
+ns0:editorConfiguration(id: xsd:string, name: xsd:string, siteId: xsd:string, siteName: xsd:string, cssFileId: xsd:string, cssFilePath: xsd:string, cssFileRecycled: xsd:boolean, configuration: xsd:string)
+ns0:entity-type(name: ns0:entityTypeString)
+ns0:entityTypeString
+ns0:expiring-asset(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean)
+ns0:facebookConnector(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, auth1: xsd:string, auth2: xsd:string, url: xsd:string, verified: xsd:boolean, verifiedDate: xsd:dateTime, connectorParameters: ns0:connector-parameter-list, connectorContentTypeLinks: ns0:connector-content-type-link-list, destinationId: xsd:string, destinationPath: xsd:string)
+ns0:feedBlock(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, feedURL: xsd:anyURI)
+ns0:fieldValue(value: xsd:string)
+ns0:fieldValues(fieldValue: ns0:fieldValue[])
+ns0:file(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, shouldBePublished: xsd:boolean, shouldBeIndexed: xsd:boolean, lastPublishedDate: xsd:dateTime, lastPublishedBy: xsd:string, text: xsd:string, data: xsd:base64Binary, rewriteLinks: xsd:boolean, linkRewriting: ns0:linkRewriting)
+ns0:fileSystemTransport(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, directory: xsd:string)
+ns0:folder(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, shouldBePublished: xsd:boolean, shouldBeIndexed: xsd:boolean, lastPublishedDate: xsd:dateTime, lastPublishedBy: xsd:string, children: ns0:container-children, includeInStaleContent: xsd:boolean)
+ns0:folder-contained-asset(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags)
+ns0:ftpProtocolType
+ns0:ftpTransport(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, hostName: xsd:string, port: xsd:positiveInteger, doPASV: xsd:boolean, username: xsd:string, authMode: ns0:authMode, privateKey: xsd:string, password: xsd:string, directory: xsd:string, ftpProtocolType: ns0:ftpProtocolType)
+ns0:global-abilities(bypassAllPermissionsChecks: xsd:boolean, accessSiteManagement: xsd:boolean, createSites: xsd:boolean, editAccessRights: xsd:boolean, accessAudits: xsd:boolean, accessAllSites: xsd:boolean, viewSystemInfoAndLogs: xsd:boolean, forceLogout: xsd:boolean, diagnosticTests: xsd:boolean, accessSecurityArea: xsd:boolean, optimizeDatabase: xsd:boolean, syncLdap: xsd:boolean, configureLogging: xsd:boolean, searchingIndexing: xsd:boolean, accessConfiguration: xsd:boolean, editSystemPreferences: xsd:boolean, broadcastMessages: xsd:boolean, viewUsersInMemberGroups: xsd:boolean, viewAllUsers: xsd:boolean, createUsers: xsd:boolean, deleteUsersInMemberGroups: xsd:boolean, deleteAllUsers: xsd:boolean, viewMemberGroups: xsd:boolean, viewAllGroups: xsd:boolean, createGroups: xsd:boolean, deleteMemberGroups: xsd:boolean, accessRoles: xsd:boolean, createRoles: xsd:boolean, deleteAnyGroup: xsd:boolean, editAnyUser: xsd:boolean, editUsersInMemberGroups: xsd:boolean, editAnyGroup: xsd:boolean, editMemberGroups: xsd:boolean, databaseExportTool: xsd:boolean, changeIdentity: xsd:boolean, accessDefaultEditorConfiguration: xsd:boolean, modifyDictionary: xsd:boolean)
+ns0:googleAnalyticsConnector(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, auth1: xsd:string, auth2: xsd:string, url: xsd:string, verified: xsd:boolean, verifiedDate: xsd:dateTime, connectorParameters: ns0:connector-parameter-list, connectorContentTypeLinks: ns0:connector-content-type-link-list)
+ns0:group(groupName: xsd:string, users: xsd:string, role: xsd:string)
+ns0:identifier(id: xsd:string, path: ns0:path, type: ns0:entityTypeString, recycled: xsd:boolean)
+ns0:index-block-page-xml
+ns0:index-block-rendering-behavior
+ns0:index-block-sort-method
+ns0:index-block-sort-order
+ns0:index-block-type
+ns0:indexBlock(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, indexBlockType: ns0:index-block-type, indexedFolderId: xsd:string, indexedFolderPath: xsd:string, indexedContentTypeId: xsd:string, indexedContentTypePath: xsd:string, indexedFolderRecycled: xsd:boolean, maxRenderedAssets: xsd:nonNegativeInteger, depthOfIndex: xsd:nonNegativeInteger, renderingBehavior: ns0:index-block-rendering-behavior, indexPages: xsd:boolean, indexBlocks: xsd:boolean, indexLinks: xsd:boolean, indexFiles: xsd:boolean, indexRegularContent: xsd:boolean, indexSystemMetadata: xsd:boolean, indexUserMetadata: xsd:boolean, indexAccessRights: xsd:boolean, indexTags: xsd:boolean, indexUserInfo: xsd:boolean, indexWorkflowInfo: xsd:boolean, appendCallingPageData: xsd:boolean, sortMethod: ns0:index-block-sort-method, sortOrder: ns0:index-block-sort-order, pageXML: ns0:index-block-page-xml)
+ns0:inlineEditableField(pageConfigurationName: xsd:string, pageRegionName: xsd:string, dataDefinitionGroupPath: xsd:string, type: ns0:inlineEditableFieldType, name: xsd:string)
+ns0:inlineEditableFieldType
+ns0:inlineEditableFields(inlineEditableField: ns0:inlineEditableField[])
+ns0:linkRewriting
+ns0:listEditorConfigurationsResult(success: xsd:string, message: xsd:string, editorConfigurations: ns0:assetIdentifiers)
+ns0:listMessagesResult(success: xsd:string, message: xsd:string, messages: ns0:messagesList)
+ns0:listSitesResult(success: xsd:string, message: xsd:string, sites: ns0:assetIdentifiers)
+ns0:listSubscribers(identifier: ns0:identifier)
+ns0:listSubscribersResult(success: xsd:string, message: xsd:string, subscribers: ns0:assetIdentifiers, manualSubscribers: ns0:assetIdentifiers)
+ns0:message(id: xsd:string, to: xsd:string, from: xsd:string, subject: xsd:string, date: xsd:dateTime, body: xsd:string)
+ns0:message-mark-type
+ns0:messagesList(message: ns0:message[])
+ns0:metadata(author: xsd:string, displayName: xsd:string, endDate: xsd:dateTime, keywords: xsd:string, metaDescription: xsd:string, reviewDate: xsd:dateTime, startDate: xsd:dateTime, summary: xsd:string, teaser: xsd:string, title: xsd:string, dynamicFields: ns0:dynamicMetadataFields)
+ns0:metadata-field-visibility
+ns0:metadataSet(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, authorFieldRequired: xsd:boolean, authorFieldVisibility: ns0:metadata-field-visibility, authorFieldHelpText: xsd:string, descriptionFieldRequired: xsd:boolean, descriptionFieldVisibility: ns0:metadata-field-visibility, descriptionFieldHelpText: xsd:string, displayNameFieldRequired: xsd:boolean, displayNameFieldVisibility: ns0:metadata-field-visibility, displayNameFieldHelpText: xsd:string, endDateFieldRequired: xsd:boolean, endDateFieldVisibility: ns0:metadata-field-visibility, endDateFieldHelpText: xsd:string, expirationFolderFieldRequired: xsd:boolean, expirationFolderFieldVisibility: ns0:metadata-field-visibility, expirationFolderFieldHelpText: xsd:string, keywordsFieldRequired: xsd:boolean, keywordsFieldVisibility: ns0:metadata-field-visibility, keywordsFieldHelpText: xsd:string, reviewDateFieldRequired: xsd:boolean, reviewDateFieldVisibility: ns0:metadata-field-visibility, reviewDateFieldHelpText: xsd:string, startDateFieldRequired: xsd:boolean, startDateFieldVisibility: ns0:metadata-field-visibility, startDateFieldHelpText: xsd:string, summaryFieldRequired: xsd:boolean, summaryFieldVisibility: ns0:metadata-field-visibility, summaryFieldHelpText: xsd:string, teaserFieldRequired: xsd:boolean, teaserFieldVisibility: ns0:metadata-field-visibility, teaserFieldHelpText: xsd:string, titleFieldRequired: xsd:boolean, titleFieldVisibility: ns0:metadata-field-visibility, titleFieldHelpText: xsd:string, dynamicMetadataFieldDefinitions: ns0:dynamic-metadata-field-definitions)
+ns0:metadataSetContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:move(identifier: ns0:identifier, moveParameters: ns0:moveParameters, workflowConfiguration: ns0:workflow-configuration)
+ns0:moveParameters(unpublish: xsd:boolean, destinations: ns0:assetIdentifiers, destinationContainerIdentifier: ns0:identifier, doWorkflow: xsd:boolean, newName: xsd:string)
+ns0:named-asset(id: xsd:string, name: xsd:string)
+ns0:namingRuleAsset
+ns0:namingRuleAssets(namingRuleAsset: ns0:namingRuleAsset[])
+ns0:namingRuleCase
+ns0:namingRuleSpacing
+ns0:operation(({create: ns0:create} | {delete: ns0:delete} | {edit: ns0:edit} | {move: ns0:move} | {publish: ns0:publish} | {read: ns0:read} | {readAccessRights: ns0:readAccessRights} | {editAccessRights: ns0:editAccessRights} | {readWorkflowSettings: ns0:readWorkflowSettings} | {editWorkflowSettings: ns0:editWorkflowSettings} | {listSubscribers: ns0:listSubscribers} | {checkOut: ns0:checkOut} | {checkIn: ns0:checkIn} | {copy: ns0:copy} | {siteCopy: ns0:siteCopy}))
+ns0:operationResult(success: xsd:string, message: xsd:string)
+ns0:page(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, shouldBePublished: xsd:boolean, shouldBeIndexed: xsd:boolean, lastPublishedDate: xsd:dateTime, lastPublishedBy: xsd:string, configurationSetId: xsd:string, configurationSetPath: xsd:string, contentTypeId: xsd:string, contentTypePath: xsd:string, structuredData: ns0:structured-data, xhtml: xsd:string, pageConfigurations: ns0:page-configurations, linkRewriting: ns0:linkRewriting)
+ns0:page-configurations(pageConfiguration: ns0:pageConfiguration[])
+ns0:page-regions(pageRegion: ns0:pageRegion[])
+ns0:pageConfiguration(id: xsd:string, name: xsd:string, defaultConfiguration: xsd:boolean, templateId: xsd:string, templatePath: xsd:string, formatId: xsd:string, formatPath: xsd:string, formatRecycled: xsd:boolean, pageRegions: ns0:page-regions, outputExtension: xsd:string, serializationType: ns0:serialization-type, includeXMLDeclaration: xsd:boolean, publishable: xsd:boolean)
+ns0:pageConfigurationSet(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, pageConfigurations: ns0:page-configurations)
+ns0:pageConfigurationSetContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:pageRegion(id: xsd:string, name: xsd:string, blockId: xsd:string, blockPath: xsd:string, blockRecycled: xsd:boolean, noBlock: xsd:boolean, formatId: xsd:string, formatPath: xsd:string, formatRecycled: xsd:boolean, noFormat: xsd:boolean)
+ns0:path(path: xsd:string, siteId: xsd:string, siteName: xsd:string)
+ns0:preference(name: xsd:string, value: xsd:string)
+ns0:preferencesList(preference: ns0:preference[])
+ns0:publish(publishInformation: ns0:publishInformation)
+ns0:publishInformation(identifier: ns0:identifier, destinations: ns0:assetIdentifiers, unpublish: xsd:boolean, publishRelatedAssets: xsd:boolean, publishRelatedPublishSet: xsd:boolean, scheduledDate: xsd:dateTime)
+ns0:publishSet(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, files: ns0:publishable-asset-list, folders: ns0:publishable-asset-list, pages: ns0:publishable-asset-list, usesScheduledPublishing: xsd:boolean, scheduledPublishDestinationMode: ns0:scheduledDestinationMode, scheduledPublishDestinations: ns0:destination-list, timeToPublish: xsd:time, ({publishIntervalHours: xsd:nonNegativeInteger} | {publishDaysOfWeek: ns0:daysOfWeek} | {cronExpression: xsd:string}), sendReportToUsers: xsd:string, sendReportToGroups: xsd:string, sendReportOnErrorOnly: xsd:boolean)
+ns0:publishSetContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:publishable-asset(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, shouldBePublished: xsd:boolean, shouldBeIndexed: xsd:boolean, lastPublishedDate: xsd:dateTime, lastPublishedBy: xsd:string)
+ns0:publishable-asset-list(publishableAssetIdentifier: ns0:identifier[])
+ns0:read(identifier: ns0:identifier)
+ns0:readAccessRights(identifier: ns0:identifier)
+ns0:readAccessRightsResult(success: xsd:string, message: xsd:string, accessRightsInformation: ns0:accessRightsInformation)
+ns0:readAuditsResult(success: xsd:string, message: xsd:string, audits: ns0:audits)
+ns0:readPreferencesResult(success: xsd:string, message: xsd:string, preferences: ns0:preferencesList)
+ns0:readResult(success: xsd:string, message: xsd:string, asset: ns0:asset)
+ns0:readWorkflowInformationResult(success: xsd:string, message: xsd:string, workflow: ns0:workflow)
+ns0:readWorkflowSettings(identifier: ns0:identifier)
+ns0:readWorkflowSettingsResult(success: xsd:string, message: xsd:string, workflowSettings: ns0:workflowSettings)
+ns0:recycleBinExpiration
+ns0:reference(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, referencedAssetId: xsd:string, referencedAssetPath: xsd:string, referencedAssetType: ns0:entityTypeString)
+ns0:role(id: xsd:string, name: xsd:string, roleType: ns0:role-types, ({globalAbilities: ns0:global-abilities} | {siteAbilities: ns0:site-abilities}))
+ns0:role-assignment(roleId: xsd:string, roleName: xsd:string, users: xsd:string, groups: xsd:string)
+ns0:role-assignments(roleAssignment: ns0:role-assignment[])
+ns0:role-types
+ns0:scheduledDestinationMode
+ns0:scriptFormat(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, script: xsd:string)
+ns0:search-matches(match: ns0:identifier[])
+ns0:searchFieldString
+ns0:searchFields(searchField: ns0:searchFieldString[])
+ns0:searchInformation(searchTerms: xsd:string, siteId: xsd:string, siteName: xsd:string, searchFields: ns0:searchFields, searchTypes: ns0:searchTypes)
+ns0:searchResult(success: xsd:string, message: xsd:string, matches: ns0:search-matches)
+ns0:searchTypes(searchType: ns0:entityTypeString[])
+ns0:serialization-type
+ns0:sharedField(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, xml: xsd:string)
+ns0:sharedFieldContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:site(id: xsd:string, name: xsd:string, url: xsd:string, extensionsToStrip: xsd:string, defaultMetadataSetId: xsd:string, defaultMetadataSetPath: xsd:string, siteAssetFactoryContainerId: xsd:string, siteAssetFactoryContainerPath: xsd:string, defaultEditorConfigurationId: xsd:string, defaultEditorConfigurationPath: xsd:string, siteStartingPageId: xsd:string, siteStartingPagePath: xsd:string, siteStartingPageRecycled: xsd:boolean, roleAssignments: ns0:role-assignments, usesScheduledPublishing: xsd:boolean, scheduledPublishDestinationMode: ns0:scheduledDestinationMode, scheduledPublishDestinations: ns0:destination-list, timeToPublish: xsd:time, ({publishIntervalHours: xsd:nonNegativeInteger} | {publishDaysOfWeek: ns0:daysOfWeek} | {cronExpression: xsd:string}), sendReportToUsers: xsd:string, sendReportToGroups: xsd:string, sendReportOnErrorOnly: xsd:boolean, recycleBinExpiration: ns0:recycleBinExpiration, unpublishOnExpiration: xsd:boolean, linkCheckerEnabled: xsd:boolean, externalLinkCheckOnPublish: xsd:boolean, inheritDataChecksEnabled: xsd:boolean, spellCheckEnabled: xsd:boolean, linkCheckEnabled: xsd:boolean, accessibilityCheckEnabled: xsd:boolean, inheritNamingRules: xsd:boolean, namingRuleCase: ns0:namingRuleCase, namingRuleSpacing: ns0:namingRuleSpacing, namingRuleAssets: ns0:namingRuleAssets, accessibilityCheckerEnabled: xsd:boolean, siteImproveIntegrationEnabled: xsd:boolean, siteImproveUrl: xsd:string, widenDamIntegrationEnabled: xsd:boolean, widenDamIntegrationCategory: xsd:string, webdamDamIntegrationEnabled: xsd:boolean, rootFolderId: xsd:string, rootAssetFactoryContainerId: xsd:string, rootPageConfigurationSetContainerId: xsd:string, rootContentTypeContainerId: xsd:string, rootConnectorContainerId: xsd:string, rootDataDefinitionContainerId: xsd:string, rootSharedFieldContainerId: xsd:string, rootMetadataSetContainerId: xsd:string, rootPublishSetContainerId: xsd:string, rootSiteDestinationContainerId: xsd:string, rootTransportContainerId: xsd:string, rootWorkflowDefinitionContainerId: xsd:string, rootWorkflowEmailContainerId: xsd:string, linkRewriting: ns0:siteLinkRewriting)
+ns0:site-abilities(bypassAllPermissionsChecks: xsd:boolean, uploadImagesFromWysiwyg: xsd:boolean, multiSelectCopy: xsd:boolean, multiSelectPublish: xsd:boolean, multiSelectMove: xsd:boolean, multiSelectDelete: xsd:boolean, editPageLevelConfigurations: xsd:boolean, editPageContentType: xsd:boolean, editDataDefinition: xsd:boolean, publishReadableHomeAssets: xsd:boolean, publishWritableHomeAssets: xsd:boolean, editAccessRights: xsd:boolean, viewVersions: xsd:boolean, activateDeleteVersions: xsd:boolean, accessAudits: xsd:boolean, bypassWorkflow: xsd:boolean, assignApproveWorkflowSteps: xsd:boolean, deleteWorkflows: xsd:boolean, breakLocks: xsd:boolean, assignWorkflowsToFolders: xsd:boolean, bypassAssetFactoryGroupsNewMenu: xsd:boolean, bypassDestinationGroupsWhenPublishing: xsd:boolean, bypassWorkflowDefintionGroupsForFolders: xsd:boolean, accessManageSiteArea: xsd:boolean, accessAssetFactories: xsd:boolean, accessConfigurationSets: xsd:boolean, accessDataDefinitions: xsd:boolean, accessSharedFields: xsd:boolean, accessMetadataSets: xsd:boolean, accessPublishSets: xsd:boolean, accessDestinations: xsd:boolean, accessTransports: xsd:boolean, accessWorkflowDefinitions: xsd:boolean, accessWorkflowEmails: xsd:boolean, accessContentTypes: xsd:boolean, accessConnectors: xsd:boolean, publishReadableAdminAreaAssets: xsd:boolean, publishWritableAdminAreaAssets: xsd:boolean, importZipArchive: xsd:boolean, bulkChange: xsd:boolean, recycleBinViewRestoreUserAssets: xsd:boolean, recycleBinDeleteAssets: xsd:boolean, recycleBinViewRestoreAllAssets: xsd:boolean, moveRenameAssets: xsd:boolean, diagnosticTests: xsd:boolean, alwaysAllowedToToggleDataChecks: xsd:boolean, viewPublishQueue: xsd:boolean, reorderPublishQueue: xsd:boolean, cancelPublishJobs: xsd:boolean, sendStaleAssetNotifications: xsd:boolean, brokenLinkReportAccess: xsd:boolean, brokenLinkReportMarkFixed: xsd:boolean, accessEditorConfigurations: xsd:boolean, bypassWysiwygEditorRestrictions: xsd:boolean, accessSiteImproveIntegration: xsd:boolean)
+ns0:siteCopy(originalSiteId: xsd:string, originalSiteName: xsd:string, newSiteName: xsd:string)
+ns0:siteDestinationContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:siteLinkRewriting
+ns0:statusUpdateConnector(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, auth1: xsd:string, auth2: xsd:string, url: xsd:string, verified: xsd:boolean, verifiedDate: xsd:dateTime, connectorParameters: ns0:connector-parameter-list, connectorContentTypeLinks: ns0:connector-content-type-link-list, destinationId: xsd:string, destinationPath: xsd:string)
+ns0:structured-data(definitionId: xsd:string, definitionPath: xsd:string, structuredDataNodes: ns0:structured-data-nodes)
+ns0:structured-data-asset-type
+ns0:structured-data-node(type: ns0:structured-data-type, identifier: xsd:string, structuredDataNodes: ns0:structured-data-nodes, text: xsd:string, assetType: ns0:structured-data-asset-type, blockId: xsd:string, blockPath: xsd:string, fileId: xsd:string, filePath: xsd:string, pageId: xsd:string, pagePath: xsd:string, symlinkId: xsd:string, symlinkPath: xsd:string, recycled: xsd:boolean)
+ns0:structured-data-nodes(structuredDataNode: ns0:structured-data-node[])
+ns0:structured-data-type
+ns0:symlink(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, linkURL: xsd:anyURI)
+ns0:tag(name: xsd:string)
+ns0:tags(tag: ns0:tag[])
+ns0:target(id: xsd:string, name: xsd:string, parentTargetId: xsd:string, parentTargetPath: xsd:string, path: xsd:string, baseFolderId: xsd:string, baseFolderPath: xsd:string, outputExtension: xsd:string, cssClasses: xsd:string, cssFileId: xsd:string, cssFilePath: xsd:string, cssFileRecycled: xsd:boolean, serializationType: ns0:serialization-type, includeXMLDeclaration: xsd:boolean, includeTargetPath: xsd:boolean, removeBaseFolder: xsd:boolean, usesScheduledPublishing: xsd:boolean, scheduledPublishDestinationMode: ns0:scheduledDestinationMode, scheduledPublishDestinations: ns0:destination-list, timeToPublish: xsd:time, ({publishIntervalHours: xsd:nonNegativeInteger} | {publishDaysOfWeek: ns0:daysOfWeek} | {cronExpression: xsd:string}), sendReportToUsers: xsd:string, sendReportToGroups: xsd:string, sendReportOnErrorOnly: xsd:boolean, children: ns0:container-children)
+ns0:template(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, targetId: xsd:string, targetPath: xsd:string, formatId: xsd:string, formatPath: xsd:string, formatRecycled: xsd:boolean, xml: xsd:string, pageRegions: ns0:page-regions)
+ns0:textBlock(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, text: xsd:string)
+ns0:transportContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:twitter-query-type
+ns0:twitterFeedBlock(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, accountName: xsd:string, searchString: xsd:string, maxResults: xsd:nonNegativeInteger, useDefaultStyle: xsd:boolean, excludeJQuery: xsd:boolean, queryType: ns0:twitter-query-type)
+ns0:unpublish-parameters(unpublish: xsd:boolean, destinations: ns0:assetIdentifiers)
+ns0:user(username: xsd:string, fullName: xsd:string, email: xsd:string, authType: ns0:user-auth-types, password: xsd:string, enabled: xsd:boolean, groups: xsd:string, role: xsd:string, defaultSiteId: xsd:string, defaultSiteName: xsd:string, ldapDN: xsd:string)
+ns0:user-auth-types
+ns0:user-group-identifier(name: xsd:string, type: ns0:entityTypeString)
+ns0:wordPressConnector(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, auth1: xsd:string, auth2: xsd:string, url: xsd:string, verified: xsd:boolean, verifiedDate: xsd:dateTime, connectorParameters: ns0:connector-parameter-list, connectorContentTypeLinks: ns0:connector-content-type-link-list)
+ns0:workflow(id: xsd:string, name: xsd:string, relatedEntity: ns0:identifier, currentStep: xsd:string, orderedSteps: ns0:workflowSteps, unorderedSteps: ns0:workflowSteps, startDate: xsd:dateTime, endDate: xsd:dateTime, completedWorkflowEmailId: xsd:string, completedWorkflowEmailPath: xsd:string, notificationWorkflowEmailId: xsd:string, notificationWorkflowEmailPath: xsd:string)
+ns0:workflow-configuration(workflowName: xsd:string, workflowDefinitionId: xsd:string, workflowDefinitionPath: xsd:string, workflowComments: xsd:string, workflowStepConfigurations: ns0:workflow-step-configurations, endDate: xsd:dateTime)
+ns0:workflow-step-configuration(stepIdentifier: xsd:string, stepAssignment: xsd:string)
+ns0:workflow-step-configurations(workflowStepConfiguration: ns0:workflow-step-configuration[])
+ns0:workflowAction(identifier: xsd:string, label: xsd:string, actionType: xsd:string, nextId: xsd:string)
+ns0:workflowActions(action: ns0:workflowAction[])
+ns0:workflowDefinition(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, applicableGroups: xsd:string, copy: xsd:boolean, create: xsd:boolean, delete: xsd:boolean, edit: xsd:boolean, move: xsd:boolean, namingBehavior: ns0:workflowNamingBehavior, xml: xsd:string, completedWorkflowEmailId: xsd:string, completedWorkflowEmailPath: xsd:string, notificationWorkflowEmailId: xsd:string, notificationWorkflowEmailPath: xsd:string)
+ns0:workflowDefinitionContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:workflowEmail(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, subject: xsd:string, body: xsd:string)
+ns0:workflowEmailContainer(id: xsd:string, name: xsd:string, parentContainerId: xsd:string, parentContainerPath: xsd:string, path: xsd:string, siteId: xsd:string, siteName: xsd:string, children: ns0:container-children)
+ns0:workflowNamingBehavior
+ns0:workflowSettings(identifier: ns0:identifier, workflowDefinitions: ns0:assetIdentifiers, inheritWorkflows: xsd:boolean, requireWorkflow: xsd:boolean, inheritedWorkflowDefinitions: ns0:assetIdentifiers)
+ns0:workflowStep(identifier: xsd:string, label: xsd:string, stepType: xsd:string, owner: xsd:string, actions: ns0:workflowActions)
+ns0:workflowSteps(step: ns0:workflowStep[])
+ns0:workflowTransitionInformation(workflowId: xsd:string, actionIdentifier: xsd:string, transitionComment: xsd:string)
+ns0:xhtmlDataDefinitionBlock(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, structuredData: ns0:structured-data, xhtml: xsd:string)
+ns0:xmlBlock(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, metadata: ns0:metadata, metadataSetId: xsd:string, metadataSetPath: xsd:string, reviewOnSchedule: xsd:boolean, reviewEvery: xsd:nonNegativeInteger, expirationFolderId: xsd:string, expirationFolderPath: xsd:string, expirationFolderRecycled: xsd:boolean, xml: xsd:string)
+ns0:xsltFormat(id: xsd:string, name: xsd:string, parentFolderId: xsd:string, parentFolderPath: xsd:string, path: xsd:string, lastModifiedDate: xsd:dateTime, lastModifiedBy: xsd:string, createdDate: xsd:dateTime, createdBy: xsd:string, siteId: xsd:string, siteName: xsd:string, tags: ns0:tags, xml: xsd:string)
+xsd:ENTITIES
+xsd:ENTITY
+xsd:ID
+xsd:IDREF
+xsd:IDREFS
+xsd:NCName
+xsd:NMTOKEN
+xsd:NMTOKENS
+xsd:NOTATION
+xsd:Name
+xsd:QName
+xsd:anySimpleType
+xsd:anyURI
+xsd:base64Binary
+xsd:boolean
+xsd:byte
+xsd:date
+xsd:dateTime
+xsd:decimal
+xsd:double
+xsd:duration
+xsd:float
+xsd:gDay
+xsd:gMonth
+xsd:gMonthDay
+xsd:gYear
+xsd:gYearMonth
+xsd:hexBinary
+xsd:int
+xsd:integer
+xsd:language
+xsd:long
+xsd:negativeInteger
+xsd:nonNegativeInteger
+xsd:nonPositiveInteger
+xsd:normalizedString
+xsd:positiveInteger
+xsd:short
+xsd:string
+xsd:time
+xsd:token
+xsd:unsignedByte
+xsd:unsignedInt
+xsd:unsignedLong
+xsd:unsignedShort

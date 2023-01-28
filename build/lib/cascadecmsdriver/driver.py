@@ -150,13 +150,15 @@ class CascadeCMSRestDriver:
 
     def copy_asset_to_new_container(self, asset_type: str = 'page', asset_identifier: str = '', new_name: str = '', destination_container_identifier: str = ''):
         url = f'{self.base_url}/api/v1/copy/{asset_type}/{asset_identifier}'
-        return self.session.post(
-            url,
-            data=json.dumps({
-                'copyParameters': {
-                    'newName': new_name,
-                    'doWorkflow': False,
-                    'destinationContainerIdentifier': destination_container_identifier
-                }
-            })
-        ).json()
+        payload = json.dumps({
+            'copyParameters': {
+                'destinationContainerIdentifier': {
+                    'type': 'folder',
+                    'id': destination_container_identifier,
+                },
+                'doWorkflow': False,
+                'newName': new_name,
+            }
+        })
+        self.debug(f'Copying asset... POST payload {payload} to URL {url}')
+        return self.session.post(url, data=payload).json()
