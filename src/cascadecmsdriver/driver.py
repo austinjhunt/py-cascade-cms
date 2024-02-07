@@ -4,7 +4,7 @@ for enterprise-scale content management. """
 import requests
 import logging
 import json
-from cmstypes import *
+from .cmstypes import *
 from zeep import Client, xsd
 from zeep.transports import Transport
 
@@ -271,6 +271,13 @@ class CascadeCMSRestDriver:
         # Returned entity name is "sendMessageReturn"
         pass
 
-    def siteCopy(self, originalSiteId: str, originalSiteName: str, newSiteName: str):
-        # Returned entity name is "siteCopyReturn"
-        pass
+    def siteCopy(self, originalSiteId: str = '', originalSiteName: str = '', newSiteName: str = ''):
+        url = f'{self.base_url}/api/v1/siteCopy'
+        if originalSiteId.strip():
+            key, val = 'originalSiteId', originalSiteId
+        elif originalSiteName:
+            key, val = 'originalSiteName', originalSiteName
+        return self.session.post(url, data=json.dumps({
+            key: val,
+            'newSiteName': newSiteName
+        })).json()

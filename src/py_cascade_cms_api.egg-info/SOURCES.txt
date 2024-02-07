@@ -2,7 +2,7 @@ LICENSE.md
 README.md
 setup.py
 src/cascadecmsdriver/__init__.py
-src/cascadecmsdriver/config.py
+src/cascadecmsdriver/cmstypes.py
 src/cascadecmsdriver/driver.py
 src/cascadecmsdriver/test.py
 src/py_cascade_cms_api.egg-info/PKG-INFO

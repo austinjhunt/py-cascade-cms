@@ -1,4 +1,42 @@
-from config import *
+import logging.config
+import os
+from dotenv import load_dotenv
+from driver import *
+from cmstypes import *
+load_dotenv('../../.env')
+
+
+logging.config.dictConfig({
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '%(name)s: %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'zeep.transports': {
+            'level': 'DEBUG',
+            'propagate': True,
+            'handlers': ['console'],
+        },
+    }
+})
+CASCADE_API_KEY = os.environ.get('CASCADE_API_KEY')
+CASCADE_ORG = os.environ.get('CASCADE_ORG')
+CASCADE_USERNAME = os.environ.get('CASCADE_USERNAME')
+CASCADE_PASSWORD = os.environ.get('CASCADE_PASSWORD')
+
+driver = CascadeCMSRestDriver(
+    organization_name=CASCADE_ORG, api_key=CASCADE_API_KEY)
+driver = CascadeCMSRestDriver(
+    organization_name=CASCADE_ORG, username=CASCADE_USERNAME, password=CASCADE_PASSWORD, verbose=True)
 
 
 def get_content_manager_emails_from_site_name(site_name):
@@ -64,13 +102,13 @@ def copy_asset_to_all_sites(asset_type: str = 'page', asset_id: str = ''):
 
 
 if __name__ == '__main__':
-    # get_content_manager_emails_from_site_name('testweb.cofc.edu')
-    # response = driver.unpublish_asset(
-    #     asset_type='page', asset_identifier='683e85e7ac1e0009144ab6f40f913af4')
-    # print(response)
-    # page = driver.read_asset(
-    #     asset_type='page', asset_identifier='680784d8ac1e0009144ab6f44f9a794b')
-    # print(page)
 
-    copy_asset_to_all_sites(
-        asset_type='page', asset_id='88783c24ac1e002e6d0e81020980e37a')
+    _id = 'ef9540aa7f0000010108010aee5b7fc2'
+    _type = 'page'
+    identifier = Identifier(
+        asset_id=_id, asset_type=EntityType.page)
+    response = driver.checkOut(identifier=identifier)
+    print(response)
+    comments = 'This is my check in comment'
+    response = driver.checkIn(identifier=identifier, comments=comments)
+    print(response)
